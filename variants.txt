@@ -1,0 +1,21 @@
+Sparkle: Schwaemm Protected, 3 share -- Variants
+
+v1: Schwaemm256128 (AEAD 3-TI protected)
+
+    Reference Software:     
+        schwaemm256128v1
+
+    Values for generics and constants: 
+        set_selector : dummy_lwc_32
+    
+    Key Setup Time: 
+        0 clock cycles
+
+    Execution Time for Encryption:
+        Total:                      227*Na + 257*Nm + 598
+
+    Execution Time for Decryption:
+        Total:                      227*Na + 257*Nm + 605
+
+    **Please see clk_cycles.txt for further information on execution time
+

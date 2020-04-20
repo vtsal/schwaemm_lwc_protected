@@ -1,0 +1,41 @@
+Sparkle -- 3-share Schwaemm256128 using Kogge-Stone Adder : Clock Cycles in LWC API
+
+Na       = # blocks associated data   ( |block| = 256 bits )
+Nm       = # blocks pt/ct data        ( |block| = 256 bits )
+
+Encryption:
+
+    Load key:                   13
+    Wait npub:                  9
+    Load npub:                  29
+    Initialize state:           310
+    Load ad:                    29*Na
+    Process ad:                 198*(Na - 1) + 310
+    Load dat:                   29*Nm
+    Process dat:                198*(Nm - 1) + 310
+    Output dat:                 30*Nm
+    Output tag:                 13
+
+    Total:                      227*Na + 257*Nm + 598
+
+    (Worst possible case, new AD, new DAT, new KEY and full output blocks)
+
+Decryption:
+
+    Load key:                   13
+    Wait npub:                  9
+    Load npub:                  29
+    Initialize state:           310
+    Load ad:                    29*Na
+    Process ad:                 198*(Na - 1) + 310
+    Load dat:                   29*Nm
+    Process dat:                198*(Na - 1) + 310
+    Output dat:                 30*Nm
+    Load tag:                   13
+    Verify tag valid:           7
+    
+    Total:                      227*Na + 257*Nm + 605
+
+    (Worst possible case, new AD, new DAT, new KEY and full output blocks)
+
+    
